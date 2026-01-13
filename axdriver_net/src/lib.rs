@@ -5,15 +5,15 @@
 
 extern crate alloc;
 
+#[cfg(feature = "dwmac")]
+/// DWMAC Ethernet driver for StarFive VisionFive 2
+pub mod dwmac;
 #[cfg(feature = "fxmac")]
 /// fxmac driver for PhytiumPi
 pub mod fxmac;
 #[cfg(feature = "ixgbe")]
 /// ixgbe NIC device driver.
 pub mod ixgbe;
-#[cfg(feature = "dwmac")]
-/// DWMAC Ethernet driver for StarFive VisionFive 2
-pub mod dwmac;
 
 #[doc(no_inline)]
 pub use axdriver_base::{BaseDriverOps, DevError, DevResult, DeviceType};
